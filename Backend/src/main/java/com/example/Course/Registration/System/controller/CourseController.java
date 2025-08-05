@@ -5,6 +5,8 @@ import com.example.Course.Registration.System.model.CourseRegistry;
 import com.example.Course.Registration.System.service.CourseService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
@@ -23,5 +25,13 @@ public class CourseController {
     @GetMapping("/courses/enrolled")
     public List<CourseRegistry> enrolledStudents(){
         return courseService.enrolledStudents();
+    }
+
+    @PostMapping("/courses/register")
+    public String enrolledCourse(@RequestParam("name") String name,
+                                 @RequestParam("emailId") String emailId,
+                                 @RequestParam("courseName") String courseName) {
+        courseService.enrolledCourse(name, emailId, courseName);
+        return "Congratulation! " + name + " Enrollment Successful for " + courseName;
     }
 }

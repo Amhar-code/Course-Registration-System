@@ -19,11 +19,10 @@ public class CourseRegistry {
     public CourseRegistry() {
     }
 
-    public CourseRegistry( int id, String courseName, String emailId, String name) {
-        this.id = id;
-        this.courseName = courseName;
-        this.emailId = emailId;
+    public CourseRegistry(String name, String emailId, String courseName ) {
         this.name = name;
+        this.emailId = emailId;
+        this.courseName = courseName;
     }
 
     public int getId() {
@@ -34,12 +33,12 @@ public class CourseRegistry {
         this.id = id;
     }
 
-    public String getCourseName() {
-        return courseName;
+    public String getName() {
+        return name;
     }
 
-    public void setCourseName(String courseName) {
-        this.courseName = courseName;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getEmailId() {
@@ -50,13 +49,12 @@ public class CourseRegistry {
         this.emailId = emailId;
     }
 
-    public String getName() {
-        return name;
+    public String getCourseName() {
+        return courseName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setCourseName(String courseName) {
+        this.courseName = courseName;
     }
-
 
 }
